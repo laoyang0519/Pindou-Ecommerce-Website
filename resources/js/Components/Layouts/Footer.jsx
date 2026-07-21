@@ -83,17 +83,11 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/terms-and-conditions" className="hover:text-brand-pinkSalt transition-colors">
-                  After-Sales T&C (关于售后)
+                  Custom Orders & After-Sales T&C (接单须知与售后)
                 </Link>
               </li>
               <li>
-                <Link href="/terms-and-conditions" className="hover:text-brand-pinkSalt transition-colors">Shipping & Delivery Policy</Link>
-              </li>
-              <li>
-                <Link href="/terms-and-conditions" className="hover:text-brand-pinkSalt transition-colors">Returns & Exchange Terms</Link>
-              </li>
-              <li>
-                <Link href="/contact-us" className="hover:text-brand-pinkSalt transition-colors">Help Center & FAQ</Link>
+                <Link href="/contact-us" className="hover:text-brand-pinkSalt transition-colors">Contact Us & FAQ (联系我们与常见问题)</Link>
               </li>
             </ul>
           </div>

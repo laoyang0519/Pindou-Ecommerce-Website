@@ -94,6 +94,37 @@ export default function About({ brandInfo }) {
           </div>
         </div>
 
+        {/* Custom Order / Commission Teaser */}
+        <div className="bg-white rounded-3xl p-8 border border-brand-pinkSalt-200 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="space-y-2 text-center md:text-left">
+            <span className="text-xs font-bold text-brand-oilGreen uppercase tracking-wider">
+              Handmade Commission Service
+            </span>
+            <h2 className="text-2xl font-extrabold text-brand-charcoal">
+              拼豆接单定制服务 (Custom Perler Bead Art) ✨
+            </h2>
+            <p className="text-xs text-gray-600 max-w-xl">
+              提供自带图纸拼豆定制！迷你图RM5起，全手工用心制作。支持漫展面交及快递发货（满RM30半包邮，满RM50全马包邮）。
+            </p>
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-3 flex-shrink-0">
+            <Link
+              href="/terms-and-conditions"
+              className="px-5 py-2.5 rounded-full bg-brand-pinkSalt-200 text-brand-oilGreen font-bold text-xs hover:bg-brand-pinkSalt-300 transition-colors"
+            >
+              查看接单规则与价格表 (T&C)
+            </Link>
+            <a
+              href="https://instagram.com/cozyhulla"
+              target="_blank"
+              rel="noreferrer"
+              className="px-5 py-2.5 rounded-full bg-brand-oilGreen text-white font-bold text-xs hover:bg-brand-oilGreen-600 transition-colors"
+            >
+              私信 Instagram @cozyhulla
+            </a>
+          </div>
+        </div>
+
       </main>
 
       <Footer />
