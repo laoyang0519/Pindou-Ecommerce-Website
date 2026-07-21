@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Quicksand:wght@500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-brand-cream text-brand-charcoal font-sans antialiased selection:bg-brand-pinkSalt-200 selection:text-brand-oilGreen-900;
+  }
+}
+
+/* Custom Soft Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF8F5;
+}
+::-webkit-scrollbar-thumb {
+  background: #80856D;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #676C55;
+}
+
+/* Kawaii Glassmorphism & Soft Effects */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.kawaii-card {
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.kawaii-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 35px rgba(128, 133, 109, 0.15);
+}
+
+.announcement-shimmer {
+  background: linear-gradient(90deg, #80856D 0%, #9CA189 50%, #80856D 100%);
+  background-size: 200% 100%;
+  animation: shimmer 4s infinite linear;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
