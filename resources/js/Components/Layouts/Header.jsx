@@ -20,11 +20,11 @@ export default function Header({ categories = [] }) {
 
   return (
     <>
-      <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-brand-pinkSalt-200 shadow-sm transition-all duration-200">
+      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-brand-pinkSalt-200 shadow-sm transition-all duration-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20 gap-4">
             
-            {/* Mobile Menu Button */}
+            {/* Mobile Menu Toggle Button */}
             <div className="flex items-center lg:hidden">
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -35,25 +35,37 @@ export default function Header({ categories = [] }) {
               </button>
             </div>
 
-            {/* Brand Logo */}
+            {/* Official Brand Logo */}
             <div className="flex-shrink-0 flex items-center">
-              <Link href="/" className="flex items-center gap-2 group">
-                <div className="w-10 h-10 rounded-full bg-brand-pinkSalt-200 border-2 border-brand-oilGreen flex items-center justify-center font-bold text-brand-oilGreen-800 text-xl shadow-sm group-hover:scale-105 transition-transform">
-                  豆
-                </div>
-                <div className="flex flex-col">
-                  <span className="font-extrabold text-2xl tracking-tight text-brand-oilGreen font-sans">
-                    Hulla Pindou
-                  </span>
-                  <span className="text-[10px] tracking-widest uppercase font-semibold text-brand-oilGreen-600 -mt-1">
-                    Perler Beads & Craft Store
-                  </span>
+              <Link href="/" className="flex items-center gap-3 group">
+                <img
+                  src="/images/logo.png"
+                  alt="Hulla Perler Beads & More Logo"
+                  className="h-14 w-auto object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-sm"
+                  onError={(e) => {
+                    // Fallback to stylized text badge if image fails
+                    e.target.style.display = 'none';
+                    e.target.nextSibling.style.display = 'flex';
+                  }}
+                />
+                <div className="hidden items-center gap-2">
+                  <div className="w-10 h-10 rounded-full bg-brand-pinkSalt-200 border-2 border-brand-oilGreen flex items-center justify-center font-bold text-brand-oilGreen-800 text-xl shadow-sm">
+                    豆
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="font-extrabold text-2xl tracking-tight text-brand-oilGreen font-sans">
+                      Hulla Pindou
+                    </span>
+                    <span className="text-[10px] tracking-widest uppercase font-semibold text-brand-oilGreen-600 -mt-1">
+                      Perler Beads & More
+                    </span>
+                  </div>
                 </div>
               </Link>
             </div>
 
-            {/* Desktop Navigation Links & Dropdown */}
-            <nav className="hidden lg:flex items-center gap-8 font-semibold text-sm text-brand-charcoal">
+            {/* Desktop Navigation Links & Category Dropdown */}
+            <nav className="hidden lg:flex items-center gap-8 font-bold text-xs uppercase tracking-wider text-brand-charcoal">
               <Link href="/" className="hover:text-brand-oilGreen transition-colors">
                 Home
               </Link>
@@ -63,33 +75,33 @@ export default function Header({ categories = [] }) {
                 <button 
                   className="flex items-center gap-1 hover:text-brand-oilGreen py-2 transition-colors"
                 >
-                  Categories <ChevronDown className="w-4 h-4 text-brand-oilGreen" />
+                  Categories <ChevronDown className="w-3.5 h-3.5 text-brand-oilGreen" />
                 </button>
 
                 {isCategoryOpen && (
-                  <div className="absolute top-full left-0 w-64 bg-white rounded-xl shadow-kawaii border border-brand-pinkSalt-200 py-3 z-50 animate-in fade-in slide-in-from-top-2 duration-200">
+                  <div className="absolute top-full left-0 w-64 bg-white rounded-2xl shadow-kawaii border border-brand-pinkSalt-200 py-3 z-50 animate-in fade-in slide-in-from-top-2 duration-200">
                     <Link
                       href="/category"
-                      className="block px-4 py-2 text-xs font-bold text-brand-oilGreen uppercase tracking-wider hover:bg-brand-pinkSalt-50 border-b border-gray-100"
+                      className="block px-4 py-2 text-xs font-extrabold text-brand-oilGreen uppercase tracking-wider hover:bg-brand-pinkSalt-50 border-b border-gray-100"
                     >
-                      All Products 🛍️
+                      All Craft Supplies 🎀
                     </Link>
                     {categories.length > 0 ? (
                       categories.map((cat) => (
                         <Link
                           key={cat.id}
                           href={`/category/${cat.slug}`}
-                          className="block px-4 py-2.5 text-sm hover:bg-brand-pinkSalt-100 hover:text-brand-oilGreen-800 transition-colors"
+                          className="block px-4 py-2.5 text-xs font-semibold hover:bg-brand-pinkSalt-100 hover:text-brand-oilGreen-800 transition-colors normal-case"
                         >
                           {cat.name}
                         </Link>
                       ))
                     ) : (
                       <>
-                        <Link href="/category/perler-beads" className="block px-4 py-2.5 text-sm hover:bg-brand-pinkSalt-100">Perler Beads 拼豆</Link>
-                        <Link href="/category/craft-tools" className="block px-4 py-2.5 text-sm hover:bg-brand-pinkSalt-100">Craft Tools & Kits 辅料工具</Link>
-                        <Link href="/category/keychain-accessories" className="block px-4 py-2.5 text-sm hover:bg-brand-pinkSalt-100">Keychain & Accessories 挂件饰品</Link>
-                        <Link href="/category/ironing-pegboards" className="block px-4 py-2.5 text-sm hover:bg-brand-pinkSalt-100">Ironing & Pegboards 烫斗烫纸</Link>
+                        <Link href="/category/perler-beads" className="block px-4 py-2.5 text-xs font-semibold hover:bg-brand-pinkSalt-100 normal-case">Perler Beads 拼豆</Link>
+                        <Link href="/category/craft-tools" className="block px-4 py-2.5 text-xs font-semibold hover:bg-brand-pinkSalt-100 normal-case">Craft Tools & Kits 辅料工具</Link>
+                        <Link href="/category/keychain-accessories" className="block px-4 py-2.5 text-xs font-semibold hover:bg-brand-pinkSalt-100 normal-case">Keychain & Accessories 挂件饰品</Link>
+                        <Link href="/category/ironing-pegboards" className="block px-4 py-2.5 text-xs font-semibold hover:bg-brand-pinkSalt-100 normal-case">Ironing & Pegboards 烫斗烫纸</Link>
                       </>
                     )}
                   </div>
@@ -107,7 +119,7 @@ export default function Header({ categories = [] }) {
               </Link>
             </nav>
 
-            {/* Search Bar */}
+            {/* Search Input Bar */}
             <form onSubmit={handleSearchSubmit} className="hidden md:flex flex-1 max-w-xs relative">
               <input
                 type="text"
@@ -121,7 +133,7 @@ export default function Header({ categories = [] }) {
               </button>
             </form>
 
-            {/* Actions: Account & Cart */}
+            {/* User Account & Cart Controls */}
             <div className="flex items-center gap-3">
               {auth?.user ? (
                 <div className="flex items-center gap-2">
@@ -138,7 +150,7 @@ export default function Header({ categories = [] }) {
                     method="post"
                     as="button"
                     className="p-2 rounded-full hover:bg-brand-pinkSalt-100 text-brand-charcoal transition-colors"
-                    title={`Logged in as ${auth.user.username}`}
+                    title={`Logged in as @${auth.user.username}`}
                   >
                     <User className="w-5 h-5 text-brand-oilGreen" />
                   </Link>
@@ -146,13 +158,13 @@ export default function Header({ categories = [] }) {
               ) : (
                 <Link
                   href="/login"
-                  className="flex items-center gap-1.5 text-xs font-bold text-brand-oilGreen border border-brand-oilGreen px-3.5 py-1.5 rounded-full hover:bg-brand-oilGreen hover:text-white transition-all"
+                  className="flex items-center gap-1.5 text-xs font-bold text-brand-oilGreen border border-brand-oilGreen px-3.5 py-1.5 rounded-full hover:bg-brand-oilGreen hover:text-white transition-all shadow-sm"
                 >
                   <User className="w-3.5 h-3.5" /> Login / Join
                 </Link>
               )}
 
-              {/* Shopping Cart Drawer Trigger */}
+              {/* Cart Drawer Trigger Button */}
               <button
                 onClick={() => setIsCartOpen(true)}
                 className="relative p-2.5 rounded-full bg-brand-pinkSalt-200 text-brand-oilGreen hover:bg-brand-pinkSalt-300 transition-all shadow-sm group"
@@ -166,10 +178,11 @@ export default function Header({ categories = [] }) {
                 )}
               </button>
             </div>
+
           </div>
         </div>
 
-        {/* Mobile Navigation Menu Slideout */}
+        {/* Mobile Navigation Drawer */}
         {isMobileMenuOpen && (
           <div className="lg:hidden border-t border-brand-pinkSalt-200 bg-white px-4 pt-3 pb-6 space-y-3 animate-in slide-in-from-top duration-200">
             <form onSubmit={handleSearchSubmit} className="relative mb-3">
@@ -185,16 +198,16 @@ export default function Header({ categories = [] }) {
               </button>
             </form>
 
-            <Link href="/" className="block py-2 font-semibold text-brand-charcoal hover:text-brand-oilGreen">Home</Link>
-            <Link href="/category" className="block py-2 font-semibold text-brand-charcoal hover:text-brand-oilGreen">All Categories</Link>
-            <Link href="/about-us" className="block py-2 font-semibold text-brand-charcoal hover:text-brand-oilGreen">About Us</Link>
-            <Link href="/terms-and-conditions" className="block py-2 font-semibold text-brand-charcoal hover:text-brand-oilGreen">After-Sales T&C (关于售后)</Link>
-            <Link href="/contact-us" className="block py-2 font-semibold text-brand-charcoal hover:text-brand-oilGreen">Contact Us</Link>
+            <Link href="/" className="block py-2 font-bold text-xs uppercase text-brand-charcoal hover:text-brand-oilGreen">Home</Link>
+            <Link href="/category" className="block py-2 font-bold text-xs uppercase text-brand-charcoal hover:text-brand-oilGreen">All Categories</Link>
+            <Link href="/about-us" className="block py-2 font-bold text-xs uppercase text-brand-charcoal hover:text-brand-oilGreen">About Us</Link>
+            <Link href="/terms-and-conditions" className="block py-2 font-bold text-xs uppercase text-brand-charcoal hover:text-brand-oilGreen">After-Sales T&C (关于售后)</Link>
+            <Link href="/contact-us" className="block py-2 font-bold text-xs uppercase text-brand-charcoal hover:text-brand-oilGreen">Contact Us</Link>
           </div>
         )}
       </header>
 
-      {/* Cart Drawer Component */}
+      {/* Cart Slide-Over Drawer */}
       <CartDrawer isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} onCountChange={setCartCount} />
     </>
   );

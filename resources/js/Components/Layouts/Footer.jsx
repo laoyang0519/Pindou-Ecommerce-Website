@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from '@inertiajs/react';
-import { Heart, MapPin, Mail, Phone, Instagram, MessageCircle, CreditCard, ShieldCheck } from 'lucide-react';
+import { Heart, MapPin, Mail, Phone, Instagram, MessageCircle } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -8,12 +8,14 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           
-          {/* Column 1: About Summary */}
+          {/* Column 1: About Summary & Brand Logo */}
           <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-full bg-brand-pinkSalt-200 border border-brand-oilGreen flex items-center justify-center font-bold text-brand-oilGreen-800 text-lg">
-                豆
-              </div>
+            <div className="flex items-center gap-3">
+              <img
+                src="/images/logo.png"
+                alt="Hulla Perler Beads & More"
+                className="h-16 w-auto bg-white p-1.5 rounded-full border-2 border-brand-pinkSalt shadow-sm"
+              />
               <span className="font-extrabold text-xl text-white font-sans tracking-tight">
                 Hulla Pindou
               </span>
@@ -50,7 +52,7 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2.5 text-xs">
               <li>
-                <Link href="/" className="hover:text-brand-pinkSalt transition-colors">Home Slider & Banners</Link>
+                <Link href="/" className="hover:text-brand-pinkSalt transition-colors">Home Storefront</Link>
               </li>
               <li>
                 <Link href="/category/perler-beads" className="hover:text-brand-pinkSalt transition-colors">Perler Beads Collection (拼豆)</Link>
@@ -114,7 +116,7 @@ export default function Footer() {
             {/* Payment Methods */}
             <div className="pt-3">
               <span className="text-[11px] uppercase font-bold text-gray-400 block mb-2">Accepted Payment Methods</span>
-              <div className="flex items-center gap-2">
+              <div className="flex flex-wrap gap-2">
                 <span className="bg-gray-800 text-brand-pinkSalt text-[10px] font-bold px-2 py-1 rounded border border-gray-700">FPX Online Banking</span>
                 <span className="bg-gray-800 text-brand-pinkSalt text-[10px] font-bold px-2 py-1 rounded border border-gray-700">Touch 'n Go E-Wallet</span>
                 <span className="bg-gray-800 text-brand-pinkSalt text-[10px] font-bold px-2 py-1 rounded border border-gray-700">Visa / Mastercard</span>

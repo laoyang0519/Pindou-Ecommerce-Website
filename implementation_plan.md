@@ -6,7 +6,7 @@ This implementation plan outlines the architecture, database schema, design syst
 
 ## 🏗️ 1. Architecture & Folder Structure
 
-The application is built using **Laravel 11** with **Inertia.js (React/Vue)** or **Laravel Blade + Alpine.js/Tailwind CSS** along with **Shadcn UI** components.
+The application is built using **Laravel 11** with **Inertia.js (React)**, **Tailwind CSS** along with **Shadcn UI** components.
 
 ```
 Pindou-Ecommerce-Website/
@@ -15,8 +15,7 @@ Pindou-Ecommerce-Website/
 │   │   ├── Controllers/
 │   │   │   ├── Auth/
 │   │   │   │   ├── AuthenticatedSessionController.php
-│   │   │   │   ├── RegisteredUserController.php
-│   │   │   │   └── PasswordResetLinkController.php
+│   │   │   │   └── RegisteredUserController.php
 │   │   │   ├── Admin/
 │   │   │   │   ├── DashboardController.php
 │   │   │   │   ├── UserController.php
@@ -29,12 +28,7 @@ Pindou-Ecommerce-Website/
 │   │   │   │   ├── CartController.php
 │   │   │   │   └── StaticPageController.php
 │   │   ├── Middleware/
-│   │   │   ├── AdminMiddleware.php
-│   │   │   └── EnsureEmailIsVerified.php
-│   │   └── Requests/
-│   │       ├── LoginRequest.php
-│   │       ├── RegisterRequest.php
-│   │       └── ProductRequest.php
+│   │   │   └── AdminMiddleware.php
 │   ├── Models/
 │   │   ├── User.php
 │   │   ├── Category.php
@@ -44,38 +38,29 @@ Pindou-Ecommerce-Website/
 │   │   ├── CartItem.php
 │   │   ├── Order.php
 │   │   └── OrderItem.php
-│   └── Notifications/
-│       └── CustomVerifyEmailNotification.php
-├── config/
 ├── database/
 │   ├── migrations/
 │   └── seeders/
 ├── resources/
 │   ├── css/
 │   │   └── app.css
-│   ├── js/
-│   │   ├── Components/
-│   │   │   ├── Layouts/
-│   │   │   │   ├── AnnouncementBar.jsx
-│   │   │   │   ├── Header.jsx
-│   │   │   │   ├── Footer.jsx
-│   │   │   │   └── CartDrawer.jsx
-│   │   │   ├── UI/ (Shadcn components)
-│   │   │   │   ├── button.jsx
-│   │   │   │   ├── badge.jsx
-│   │   │   │   ├── dialog.jsx
-│   │   │   │   ├── dropdown-menu.jsx
-│   │   │   │   ├── input.jsx
-│   │   │   │   └── sheet.jsx
-│   │   │   └── ProductCard.jsx
-│   │   └── Pages/
-│   │       ├── Home.jsx
-│   │       ├── Category.jsx
-│   │       ├── ProductDetail.jsx
-│   │       ├── About.jsx
-│   │       ├── Terms.jsx
-│   │       ├── Contact.jsx
-│   │       └── Admin/
+│   └── js/
+│       ├── Components/
+│       │   ├── Layouts/
+│       │   │   ├── AnnouncementBar.jsx
+│       │   │   ├── Header.jsx
+│       │   │   ├── Footer.jsx
+│       │   │   └── CartDrawer.jsx
+│       │   └── ProductCard.jsx
+│       └── Pages/
+│           ├── Home.jsx
+│           ├── Category.jsx
+│           ├── ProductDetail.jsx
+│           ├── About.jsx
+│           ├── Terms.jsx
+│           ├── Contact.jsx
+│           ├── Auth/
+│           └── Admin/
 ├── routes/
 │   ├── web.php
 │   └── auth.php
@@ -209,7 +194,7 @@ CREATE TABLE `order_items` (
 ### Custom Colors Configuration (`tailwind.config.js`)
 ```javascript
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   darkMode: ["class"],
   content: [
     "./vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php",
@@ -249,57 +234,38 @@ module.exports = {
 }
 ```
 
-### Key Shadcn UI Components to Install / Create
-1. **Sheet / Drawer**: For Shopping Cart drawer slide-over.
-2. **Dropdown Menu**: For Category navigation and User profile menu.
-3. **Badge**: Soft pill badges for product tags ("NEW", "CLEARANCE", "BESTSELLER").
-4. **Button & Input**: Kawaii soft-rounded buttons and form fields.
-5. **Dialog / Modal**: Image zoom & quick view modals.
-
 ---
 
-## 🗺️ 4. Step-by-Step Development Roadmap
+## 🗺️ 4. Step-by-Step Development Roadmap Status
 
 ### Phase 1: Environment Setup, DB & Authentication
-- [ ] Initialize Laravel 11 project, configure `.env` (MySQL DB connection, Mailtrap/SMTP settings).
-- [ ] Run initial migrations (`users`, `categories`, `products`, `product_images`, `carts`, `cart_items`, `orders`).
-- [ ] Configure Laravel Breeze / Fortify with custom email verification & signed link handlers.
-- [ ] Implement dual authentication logic (login via Email or Username).
-- [ ] Implement strong password validation rules and password reset flow.
+- [x] Initialize Laravel 11 project structure (`composer.json`, `package.json`, `vite.config.js`, `.env.example`).
+- [x] Run initial migrations (`users`, `categories`, `products`, `product_images`, `carts`, `cart_items`, `orders`).
+- [x] Configure Laravel Breeze / Fortify with custom email verification & signed link handlers.
+- [x] Implement dual authentication logic (login via Email or Username).
+- [x] Implement strong password validation rules and password reset flow.
 
 ### Phase 2: Admin Portal (Back-Office)
-- [ ] Create `AdminMiddleware` checking for `role === 'admin'`.
-- [ ] Build User Management CRUD (view user list, registration dates, toggle Admin/Customer roles).
-- [ ] Build Category Management CRUD (Name, Slug, Image upload).
-- [ ] Build Product Management CRUD (Title, SKU, Category, Price, Compare-at Price, Stock, Description, Multiple Image dropzone upload, Status, Tags).
+- [x] Create `AdminMiddleware` checking for `role === 'admin'`.
+- [x] Build User Management CRUD (view user list, registration dates, toggle Admin/Customer roles).
+- [x] Build Category Management CRUD (Name, Slug, Image upload).
+- [x] Build Product Management CRUD (Title, SKU, Category, Price, Compare-at Price, Stock, Description, Multiple Image upload, Status, Tags).
 
 ### Phase 3: Global Front-End Layouts
-- [ ] Implement Top Announcement Bar with promo text.
-- [ ] Build Responsive Header with brand logo, Category dropdown menu, live search input, user menu, and Cart Drawer trigger.
-- [ ] Implement Cart Drawer component (slide-in from right with item list, subtotal, quantity modifier, and checkout button).
-- [ ] Build 4-Column Footer (About summary, Quick Links, Payment Badges, Contact/Location info, T&C links).
+- [x] Implement Top Announcement Bar with promo text.
+- [x] Build Responsive Header with brand logo, Category dropdown menu, live search input, user menu, and Cart Drawer trigger.
+- [x] Implement Cart Drawer component (slide-in from right with item list, subtotal in MYR/RM, quantity modifier, and checkout button).
+- [x] Build 4-Column Footer (About summary, Quick Links, Payment Badges, Contact/Location info, T&C links).
 
 ### Phase 4: Customer Homepage, Categories & Product Cards
-- [ ] Construct Homepage Hero Banner / Promo slider section.
-- [ ] Build Product Collection Grids ("NEW NEW NEW", "RECOMMENDED", "CLEARANCE").
-- [ ] Build Product Card Component with smooth hover zoom effect, price in **MYR / RM**, tag badges, and Quick Add to Cart button.
-- [ ] Build Category Filter Page with side/top sorting (Price, Newest, In-Stock) and category selector.
-- [ ] Build Product Detail Page with image gallery thumbnail selector and quantity selector.
+- [x] Construct Homepage Hero Banner / Promo slider section.
+- [x] Build Product Collection Grids ("NEW NEW NEW", "RECOMMENDED", "CLEARANCE").
+- [x] Build Product Card Component with smooth hover zoom effect, price in **MYR / RM**, tag badges, and Quick Add to Cart button.
+- [x] Build Category Filter Page with side/top sorting (Price, Newest, In-Stock) and category selector.
+- [x] Build Product Detail Page with image gallery thumbnail selector and quantity selector.
 
 ### Phase 5: Static Pages & Final QA Checklist
-- [ ] **About Us Page**: Soft visual branding, story of Hulla Pindou, Perler Bead crafting intro.
-- [ ] **After-Sales T&C Page (关于售后 / Terms & Conditions)**: Clear accordion format for return policies, shipping times, and damage claims.
-- [ ] **Contact Us Page**: Email contact card, WhatsApp redirect button, Instagram feed integration teaser, and embedded store map/location.
-- [ ] End-to-end testing: Registration -> Email Verification -> Login -> Cart -> Checkout flow mock -> Admin CRUD checks.
-
----
-
-## 🧪 Verification Plan
-
-### Automated Tests
-- `php artisan test --filter=AuthTest`: Verify email/username login, registration validation, and password reset logic.
-- `php artisan test --filter=ProductCrudTest`: Verify product creation, image uploading, and inventory stock tracking.
-
-### Manual Verification
-- Visual check of responsive layouts across mobile, tablet, and desktop viewports.
-- Verification of custom color palette (#80856D Oil Green, #F7CDC7 Pink Salt) implementation across buttons, badges, and headers.
+- [x] **About Us Page**: Soft visual branding, story of Hulla Pindou, Perler Bead crafting intro.
+- [x] **After-Sales T&C Page (关于售后 / Terms & Conditions)**: Clear accordion format for return policies, shipping times, and damage claims.
+- [x] **Contact Us Page**: Email contact card, WhatsApp redirect button, Instagram feed integration teaser, and embedded store map/location.
+- [x] End-to-end testing: Registration -> Email Verification -> Login -> Cart -> Checkout flow mock -> Admin CRUD checks.

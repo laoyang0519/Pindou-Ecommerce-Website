@@ -17,7 +17,14 @@ export default function About({ brandInfo }) {
         
         {/* Hero About Banner */}
         <div className="bg-white rounded-3xl p-8 sm:p-12 border border-brand-pinkSalt-200 shadow-kawaii text-center space-y-4 max-w-4xl mx-auto">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-pinkSalt-100 text-brand-oilGreen text-xs font-bold uppercase tracking-wider">
+          <div className="flex justify-center mb-2">
+            <img
+              src="/images/logo.png"
+              alt="Hulla Perler Beads Logo"
+              className="h-24 w-auto bg-white p-2 rounded-full border-2 border-brand-pinkSalt shadow-sm"
+            />
+          </div>
+          <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-brand-pinkSalt-100 text-brand-oilGreen text-xs font-bold uppercase tracking-wider">
             <Sparkles className="w-3.5 h-3.5" /> About Hulla Pindou (拼豆小铺)
           </span>
           <h1 className="text-3xl sm:text-4xl font-extrabold text-brand-charcoal leading-tight">
