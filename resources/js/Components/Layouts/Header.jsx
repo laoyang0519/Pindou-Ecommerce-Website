@@ -90,7 +90,7 @@ export default function Header({ categories = [] }) {
                       categories.map((cat) => (
                         <Link
                           key={cat.id}
-                          href={`/category/${cat.slug}`}
+                          href={`/category?category=${cat.slug}`}
                           className="block px-4 py-2.5 text-xs font-semibold hover:bg-brand-pinkSalt-100 hover:text-brand-oilGreen-800 transition-colors normal-case"
                         >
                           {cat.name}
@@ -98,10 +98,10 @@ export default function Header({ categories = [] }) {
                       ))
                     ) : (
                       <>
-                        <Link href="/category/perler-beads" className="block px-4 py-2.5 text-xs font-semibold hover:bg-brand-pinkSalt-100 normal-case">Perler Beads 拼豆</Link>
-                        <Link href="/category/craft-tools" className="block px-4 py-2.5 text-xs font-semibold hover:bg-brand-pinkSalt-100 normal-case">Craft Tools & Kits 辅料工具</Link>
-                        <Link href="/category/keychain-accessories" className="block px-4 py-2.5 text-xs font-semibold hover:bg-brand-pinkSalt-100 normal-case">Keychain & Accessories 挂件饰品</Link>
-                        <Link href="/category/ironing-pegboards" className="block px-4 py-2.5 text-xs font-semibold hover:bg-brand-pinkSalt-100 normal-case">Ironing & Pegboards 烫斗烫纸</Link>
+                        <Link href="/category?category=perler-beads" className="block px-4 py-2.5 text-xs font-semibold hover:bg-brand-pinkSalt-100 normal-case">Perler Beads 拼豆</Link>
+                        <Link href="/category?category=craft-tools" className="block px-4 py-2.5 text-xs font-semibold hover:bg-brand-pinkSalt-100 normal-case">Craft Tools & Kits 辅料工具</Link>
+                        <Link href="/category?category=keychain-accessories" className="block px-4 py-2.5 text-xs font-semibold hover:bg-brand-pinkSalt-100 normal-case">Keychain & Accessories 挂件饰品</Link>
+                        <Link href="/category?category=ironing-pegboards" className="block px-4 py-2.5 text-xs font-semibold hover:bg-brand-pinkSalt-100 normal-case">Ironing & Pegboards 烫斗烫纸</Link>
                       </>
                     )}
                   </div>

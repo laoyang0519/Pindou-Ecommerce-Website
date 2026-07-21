@@ -7,15 +7,19 @@ import ProductCard from '../Components/ProductCard';
 import { SlidersHorizontal, ArrowUpDown, Sparkles } from 'lucide-react';
 
 export default function Category({ categories = [], currentCategory = null, products = { data: [] }, filters = {} }) {
-  const [selectedSort, setSelectedSort] = useState(filters.sort || 'latest');
+  const [selectedSort, setSelectedSort] = useState(filters.sort === Array.prototype.sort ? 'latest' : (filters.sort || 'latest'));
   const [selectedTag, setSelectedTag] = useState(filters.tag || '');
 
+  const productList = Array.isArray(products)
+    ? products
+    : (Array.isArray(products?.data) ? products.data : []);
+
   const handleFilterChange = (tagVal, sortVal) => {
-    let url = currentCategory ? `/category/${currentCategory.slug}` : '/category';
     const params = new URLSearchParams();
+    if (currentCategory) params.append('category', currentCategory.slug);
     if (tagVal) params.append('tag', tagVal);
     if (sortVal) params.append('sort', sortVal);
-    window.location.href = `${url}?${params.toString()}`;
+    window.location.href = `/category?${params.toString()}`;
   };
 
   return (
@@ -42,7 +46,7 @@ export default function Category({ categories = [], currentCategory = null, prod
           </div>
 
           <div className="text-xs font-bold text-brand-oilGreen bg-brand-pinkSalt-100 px-4 py-2 rounded-full">
-            Showing {products.data ? products.data.length : 0} items
+            Showing {productList.length} items
           </div>
         </div>
 
@@ -62,7 +66,7 @@ export default function Category({ categories = [], currentCategory = null, prod
             {categories.map((cat) => (
               <Link
                 key={cat.id}
-                href={`/category/${cat.slug}`}
+                href={`/category?category=${cat.slug}`}
                 className={`px-3.5 py-1.5 rounded-full font-bold transition-all ${
                   currentCategory?.id === cat.id ? 'bg-brand-oilGreen text-white' : 'bg-brand-cream text-brand-charcoal hover:bg-brand-pinkSalt-100'
                 }`}
@@ -114,9 +118,9 @@ export default function Category({ categories = [], currentCategory = null, prod
         </div>
 
         {/* Product Grid */}
-        {products.data && products.data.length > 0 ? (
+        {productList.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {products.data.map((product) => (
+            {productList.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
           </div>

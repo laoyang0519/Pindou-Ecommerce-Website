@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from '@inertiajs/react';
-import { Heart, MapPin, Mail, Phone, Instagram, MessageCircle } from 'lucide-react';
+import { Heart, Mail, Phone, Instagram, MessageCircle } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -13,70 +13,73 @@ export default function Footer() {
             <div className="flex items-center gap-3">
               <img
                 src="/images/logo.png"
-                alt="Hulla Perler Beads & More"
-                className="h-16 w-auto bg-white p-1.5 rounded-full border-2 border-brand-pinkSalt shadow-sm"
+                alt="Hulla Pindou Logo"
+                className="w-10 h-10 object-contain rounded-full bg-white p-0.5"
+                onError={(e) => { e.target.style.display = 'none'; }}
               />
-              <span className="font-extrabold text-xl text-white font-sans tracking-tight">
-                Hulla Pindou
+              <span className="text-xl font-bold text-white tracking-wide">
+                Hulla Pindou <span className="text-xs text-brand-pinkSalt font-normal">(拼豆小铺)</span>
               </span>
             </div>
             <p className="text-xs text-gray-400 leading-relaxed">
-              Hulla Pindou (拼豆小铺) is your #1 craft destination for high-grade 2.6mm & 5mm food-grade EVA perler beads, interlocking pegboards, precision craft tools, and DIY accessories in Malaysia.
+              Your Malaysian home for premium 2.6mm & 5mm perler fuse beads, accessories, pegboards, and creative DIY craft kits.
             </p>
+            
+            {/* Social Icons */}
             <div className="flex items-center gap-3 pt-2">
-              <a
-                href="https://instagram.com/hulla.pindou"
-                target="_blank"
-                rel="noreferrer"
-                className="w-8 h-8 rounded-full bg-gray-800 hover:bg-brand-pinkSalt hover:text-brand-oilGreen-900 flex items-center justify-center transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram className="w-4 h-4" />
-              </a>
               <a
                 href="https://wa.me/60123456789"
                 target="_blank"
                 rel="noreferrer"
-                className="w-8 h-8 rounded-full bg-gray-800 hover:bg-emerald-500 hover:text-white flex items-center justify-center transition-colors"
-                aria-label="WhatsApp Support"
+                className="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-brand-pinkSalt hover:bg-brand-oilGreen hover:text-white transition-all"
+                title="WhatsApp"
               >
                 <MessageCircle className="w-4 h-4" />
+              </a>
+              <a 
+                href="https://instagram.com/cozyhulla" 
+                target="_blank" 
+                rel="noreferrer"
+                className="w-10 h-10 rounded-full bg-brand-pinkSalt-100 flex items-center justify-center text-brand-oilGreen hover:bg-brand-oilGreen hover:text-white transition-colors"
+                title="Instagram"
+              >
+                <Instagram className="w-4 h-4" />
               </a>
             </div>
           </div>
 
-          {/* Column 2: Quick Links & Shop */}
-          <div>
+          {/* Column 2: Quick Links */}
+          <div className="space-y-3">
             <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-4 border-b border-gray-700 pb-2">
-              Quick Links
+              Quick Explore
             </h4>
-            <ul className="space-y-2.5 text-xs">
+            <ul className="space-y-2 text-xs">
               <li>
-                <Link href="/" className="hover:text-brand-pinkSalt transition-colors">Home Storefront</Link>
+                <Link href="/" className="hover:text-brand-pinkSalt transition-colors">Home Page</Link>
               </li>
               <li>
-                <Link href="/category/perler-beads" className="hover:text-brand-pinkSalt transition-colors">Perler Beads Collection (拼豆)</Link>
+                <Link href="/category/perler-beads" className="hover:text-brand-pinkSalt transition-colors">Perler Beads (拼豆)</Link>
               </li>
               <li>
-                <Link href="/category/craft-tools" className="hover:text-brand-pinkSalt transition-colors">Tweezers & Craft Tools (辅料工具)</Link>
+                <Link href="/category/craft-tools" className="hover:text-brand-pinkSalt transition-colors">DIY Craft Kits & Tools</Link>
               </li>
               <li>
-                <Link href="/category/ironing-pegboards" className="hover:text-brand-pinkSalt transition-colors">Pegboards & Ironing Paper (烫板烫纸)</Link>
+                <Link href="/category/keychain-accessories" className="hover:text-brand-pinkSalt transition-colors">Keychain Accessories</Link>
               </li>
               <li>
-                <Link href="/category/keychain-accessories" className="hover:text-brand-pinkSalt transition-colors">Keychain Accessories (挂件)</Link>
+                <Link href="/about-us" className="hover:text-brand-pinkSalt transition-colors">About Hulla Pindou</Link>
               </li>
             </ul>
           </div>
 
-          {/* Column 3: Customer Care & T&C */}
-          <div>
+          {/* Column 3: Customer Care */}
+          <div className="space-y-3">
             <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-4 border-b border-gray-700 pb-2">
-              Customer Care & Policy
+              Customer Support
             </h4>
-            <ul className="space-y-2.5 text-xs">
+            <ul className="space-y-2 text-xs">
               <li>
-                <Link href="/about-us" className="hover:text-brand-pinkSalt transition-colors">About Our Brand</Link>
+                <Link href="/about-us" className="hover:text-brand-pinkSalt transition-colors">About Us (关于我们)</Link>
               </li>
               <li>
                 <Link href="/terms-and-conditions" className="hover:text-brand-pinkSalt transition-colors">
@@ -95,15 +98,11 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 4: Contact & Location */}
+          {/* Column 4: Contact */}
           <div className="space-y-3">
             <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-4 border-b border-gray-700 pb-2">
-              Store Location & Contact
+              Contact Us
             </h4>
-            <div className="flex items-start gap-2.5 text-xs text-gray-400">
-              <MapPin className="w-4 h-4 text-brand-pinkSalt flex-shrink-0 mt-0.5" />
-              <span>Unit 12-08, Creative Craft Hub, Bukit Bintang, 55100 Kuala Lumpur, Malaysia</span>
-            </div>
             <div className="flex items-center gap-2.5 text-xs text-gray-400">
               <Mail className="w-4 h-4 text-brand-pinkSalt flex-shrink-0" />
               <span>hello@hullapindou.com</span>

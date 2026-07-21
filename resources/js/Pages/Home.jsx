@@ -155,7 +155,7 @@ export default function Home({ heroBanners = [], categories = [], newProducts = 
             {categories.map((cat) => (
               <Link
                 key={cat.id}
-                href={`/category/${cat.slug}`}
+                href={`/category?category=${cat.slug}`}
                 className="group relative rounded-2xl overflow-hidden border border-brand-pinkSalt-200 bg-white p-4 shadow-sm hover:shadow-softHover transition-all text-center flex flex-col items-center space-y-3"
               >
                 <div className="w-20 h-20 rounded-full bg-brand-pinkSalt-100 overflow-hidden border-2 border-brand-oilGreen p-1 group-hover:scale-110 transition-transform">
@@ -250,10 +250,10 @@ export default function Home({ heroBanners = [], categories = [], newProducts = 
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
           <div>
             <span className="text-xs font-bold text-brand-oilGreen uppercase tracking-wider flex items-center justify-center gap-1">
-              <Instagram className="w-4 h-4 text-brand-pinkSalt-700" /> Follow Us @hulla.pindou
+              <Instagram className="w-4 h-4 text-brand-pinkSalt-700" /> Follow Us @cozyhulla
             </span>
             <h2 className="text-2xl font-extrabold text-brand-charcoal mt-1">Join Our Craft Community 📸</h2>
-            <p className="text-xs text-gray-500">Tag #HullaPindou on Instagram to get featured on our page!</p>
+            <p className="text-xs text-gray-500">Tag #Cozyhulla on Instagram to get featured on our page!</p>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">

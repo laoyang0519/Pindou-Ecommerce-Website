@@ -16,7 +16,7 @@ export default function Contact({ contactInfo = {} }) {
 
   const email = contactInfo.email || 'hello@hullapindou.com';
   const whatsappUrl = contactInfo.whatsapp_url || 'https://wa.me/60123456789';
-  const instagramUrl = contactInfo.instagram_url || 'https://instagram.com/hulla.pindou';
+  const instagramUrl = contactInfo.instagram_url || 'https://instagram.com/cozyhulla';
   const address = contactInfo.store_address || 'Unit 12-08, Creative Craft Hub, Jalan Bukit Bintang, 55100 Kuala Lumpur, Malaysia';
 
   return (
@@ -169,36 +169,38 @@ export default function Contact({ contactInfo = {} }) {
             )}
           </div>
 
-          {/* Store Location Card */}
+          {/* Customer Support Info Card */}
           <div className="bg-white rounded-3xl p-8 border border-brand-pinkSalt-200 shadow-sm space-y-6 flex flex-col justify-between">
             <div className="space-y-4">
               <div className="flex items-center gap-2 text-brand-oilGreen">
-                <MapPin className="w-6 h-6" />
-                <h2 className="text-xl font-bold text-brand-charcoal">Store Location Details</h2>
+                <MessageCircle className="w-6 h-6" />
+                <h2 className="text-xl font-bold text-brand-charcoal">Online Customer Support</h2>
               </div>
-              <p className="text-xs text-gray-600 leading-relaxed">{address}</p>
+              <p className="text-xs text-gray-600 leading-relaxed">
+                We are an online-first craft store shipping nationwide across Malaysia. Get in touch with us via WhatsApp or Email for fast assistance!
+              </p>
 
-              <div className="space-y-2 pt-2 border-t border-brand-pinkSalt-100 text-xs">
+              <div className="space-y-3 pt-2 border-t border-brand-pinkSalt-100 text-xs">
                 <div className="flex justify-between">
-                  <span className="font-bold text-brand-charcoal">Operating Hours:</span>
-                  <span className="text-gray-600">Mon - Sat: 10:00 AM - 7:00 PM</span>
+                  <span className="font-bold text-brand-charcoal">Customer Support Hours:</span>
+                  <span className="text-gray-600">Mon - Sat: 9:00 AM - 6:00 PM</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="font-bold text-brand-charcoal">Sunday & Public Holidays:</span>
-                  <span className="text-gray-600">Closed</span>
+                  <span className="text-gray-600">Closed (Auto Bot Active)</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="font-bold text-brand-charcoal">Self-Pick Up Available:</span>
-                  <span className="text-emerald-600 font-bold">Yes (By WhatsApp Appointment)</span>
+                  <span className="font-bold text-brand-charcoal">Order Dispatch Time:</span>
+                  <span className="text-emerald-600 font-bold">Within 24 Hours</span>
                 </div>
               </div>
             </div>
 
-            {/* Simulated Map Visual Card */}
+            {/* Online Store Info Card */}
             <div className="aspect-video rounded-2xl bg-brand-oilGreen-50 border-2 border-brand-pinkSalt-300 flex flex-col items-center justify-center p-6 text-center space-y-2">
-              <MapPin className="w-8 h-8 text-brand-oilGreen animate-bounce" />
-              <h4 className="text-xs font-bold text-brand-oilGreen-900">Kuala Lumpur Craft Hub Hub</h4>
-              <p className="text-[11px] text-gray-500">Bukit Bintang, 55100 Kuala Lumpur</p>
+              <Instagram className="w-8 h-8 text-brand-oilGreen" />
+              <h4 className="text-xs font-bold text-brand-oilGreen-900">Hulla Pindou Online Store (拼豆小铺)</h4>
+              <p className="text-[11px] text-gray-500">Fast Nationwide Shipping • Kuala Lumpur, Malaysia</p>
             </div>
           </div>
 

@@ -33,8 +33,8 @@ class StaticPageController extends Controller
                 'email' => 'hello@hullapindou.com',
                 'whatsapp' => '+60123456789',
                 'whatsapp_url' => 'https://wa.me/60123456789?text=Hi%20Hulla%20Pindou!%20I%20have%20an%20inquiry.',
-                'instagram' => '@hulla.pindou',
-                'instagram_url' => 'https://instagram.com/hulla.pindou',
+                'instagram' => '@cozyhulla',
+                'instagram_url' => 'https://instagram.com/cozyhulla',
                 'store_address' => 'Unit 12-08, Creative Craft Hub, Jalan Bukit Bintang, 55100 Kuala Lumpur, Malaysia',
                 'business_hours' => 'Mon - Sat: 10:00 AM - 7:00 PM (GMT+8)',
             ]

@@ -12,8 +12,9 @@ class CategoryPageController extends Controller
 {
     public function show(Request $request, $slug = null)
     {
+        $categorySlug = $slug ?? $request->get('category') ?? $request->get('slug');
         $categories = Category::where('is_active', true)->get();
-        $currentCategory = $slug ? Category::where('slug', $slug)->firstOrFail() : null;
+        $currentCategory = $categorySlug ? Category::where('slug', $categorySlug)->first() : null;
 
         $query = Product::with(['category', 'primaryImage'])
             ->where('status', 'published');
@@ -22,10 +23,23 @@ class CategoryPageController extends Controller
             $query->where('category_id', $currentCategory->id);
         }
 
+        // Search filtering
+        if ($request->filled('search')) {
+            $search = $request->search;
+            $query->where(function ($q) use ($search) {
+                $q->where('title', 'like', "%{$search}%")
+                  ->orWhere('description', 'like', "%{$search}%")
+                  ->orWhere('sku', 'like', "%{$search}%");
+            });
+        }
+
         // Tag filtering (e.g., NEW, CLEARANCE, BESTSELLER)
         if ($request->filled('tag')) {
             $tag = strtoupper($request->tag);
-            $query->whereJsonContains('tags', $tag);
+            $query->where(function ($q) use ($tag) {
+                $q->whereJsonContains('tags', $tag)
+                  ->orWhere('tags', 'like', "%{$tag}%");
+            });
         }
 
         // Sorting
@@ -44,7 +58,7 @@ class CategoryPageController extends Controller
             'categories' => $categories,
             'currentCategory' => $currentCategory,
             'products' => $products,
-            'filters' => $request->only(['tag', 'sort', 'search']),
+            'filters' => (object) $request->only(['tag', 'sort', 'search']),
         ]);
     }
 }
