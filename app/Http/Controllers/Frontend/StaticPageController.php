@@ -30,7 +30,7 @@ class StaticPageController extends Controller
     {
         return Inertia::render('Contact', [
             'contactInfo' => [
-                'email' => 'hello@hullapindou.com',
+                'email' => 'hullaaaa167@gmail.com',
                 'whatsapp' => '+60123456789',
                 'whatsapp_url' => 'https://wa.me/60123456789?text=Hi%20Hulla%20Pindou!%20I%20have%20an%20inquiry.',
                 'instagram' => '@cozyhulla',

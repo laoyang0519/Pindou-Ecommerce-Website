@@ -17,7 +17,7 @@ export default function ForgotPassword({ status }) {
 
   return (
     <div className="min-h-screen bg-brand-cream flex flex-col font-sans">
-      <Head title="Forgot Password - Hulla Pindou" />
+      <Head title="Forgot Password - 呼啦の小铺" />
 
       <AnnouncementBar />
       <Header />

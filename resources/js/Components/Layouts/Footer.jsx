@@ -18,7 +18,7 @@ export default function Footer() {
                 onError={(e) => { e.target.style.display = 'none'; }}
               />
               <span className="text-xl font-bold text-white tracking-wide">
-                Hulla Pindou <span className="text-xs text-brand-pinkSalt font-normal">(拼豆小铺)</span>
+                呼啦の小铺 <span className="text-xs text-brand-pinkSalt font-normal">(Perler Beads & Crafts)</span>
               </span>
             </div>
             <p className="text-xs text-gray-400 leading-relaxed">
@@ -99,7 +99,7 @@ export default function Footer() {
             </h4>
             <div className="flex items-center gap-2.5 text-xs text-gray-400">
               <Mail className="w-4 h-4 text-brand-pinkSalt flex-shrink-0" />
-              <span>hello@hullapindou.com</span>
+              <span>hullaaaa167@gmail.com</span>
             </div>
             <div className="flex items-center gap-2.5 text-xs text-gray-400">
               <Phone className="w-4 h-4 text-brand-pinkSalt flex-shrink-0" />
@@ -121,7 +121,7 @@ export default function Footer() {
 
         {/* Bottom copyright line */}
         <div className="border-t border-gray-800 pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-500 gap-3">
-          <p>© 2026 Hulla Pindou (拼豆小铺). All Rights Reserved.</p>
+          <p>© 2026 呼啦の小铺. All Rights Reserved.</p>
           <p className="flex items-center gap-1">
             Made with <Heart className="w-3.5 h-3.5 text-brand-pinkSalt fill-brand-pinkSalt" /> for craft enthusiasts.
           </p>

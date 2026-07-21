@@ -21,7 +21,7 @@ export default function Register() {
 
   return (
     <div className="min-h-screen bg-brand-cream flex flex-col font-sans">
-      <Head title="Register Account - Hulla Pindou" />
+      <Head title="Register Account - 呼啦の小铺" />
 
       <AnnouncementBar />
       <Header />
@@ -30,10 +30,13 @@ export default function Register() {
         <div className="w-full max-w-md bg-white rounded-3xl p-8 border border-brand-pinkSalt-200 shadow-kawaii space-y-6">
           
           <div className="text-center space-y-2">
-            <div className="w-12 h-12 rounded-full bg-brand-pinkSalt-100 border border-brand-oilGreen flex items-center justify-center mx-auto text-brand-oilGreen font-bold text-xl">
-              豆
-            </div>
-            <h1 className="text-2xl font-extrabold text-brand-charcoal">Join Hulla Pindou 🎀</h1>
+            <img
+              src="/images/logo.png"
+              alt="呼啦の小铺 Logo"
+              className="h-14 w-auto mx-auto object-contain mb-1"
+              onError={(e) => { e.target.style.display = 'none'; }}
+            />
+            <h1 className="text-2xl font-extrabold text-brand-charcoal">Join 呼啦の小铺 🎀</h1>
             <p className="text-xs text-gray-500">Sign up to save craft favorites and track your orders</p>
           </div>
 

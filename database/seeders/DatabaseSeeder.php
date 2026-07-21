@@ -10,25 +10,29 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        // Create Admin Account
-        User::create([
-            'username' => 'admin',
-            'name' => 'Hulla Admin',
-            'email' => 'admin@hullapindou.com',
-            'email_verified_at' => now(),
-            'password' => Hash::make('Admin123!'),
-            'role' => 'admin',
-        ]);
+        // Create or Update Admin Account
+        User::updateOrCreate(
+            ['username' => 'admin'],
+            [
+                'name' => '呼啦 Admin',
+                'email' => 'hullaaaa167@gmail.com',
+                'email_verified_at' => now(),
+                'password' => Hash::make('Hulla123!'),
+                'role' => 'admin',
+            ]
+        );
 
-        // Create Customer Account
-        User::create([
-            'username' => 'craftlover',
-            'name' => 'Jane Doe',
-            'email' => 'customer@hullapindou.com',
-            'email_verified_at' => now(),
-            'password' => Hash::make('Customer123!'),
-            'role' => 'customer',
-        ]);
+        // Create or Update Customer Account
+        User::updateOrCreate(
+            ['username' => 'craftlover'],
+            [
+                'name' => 'Jane Doe',
+                'email' => 'customer@gmail.com',
+                'email_verified_at' => now(),
+                'password' => Hash::make('Customer123!'),
+                'role' => 'customer',
+            ]
+        );
 
         $this->call([
             CategorySeeder::class,

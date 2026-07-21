@@ -14,14 +14,14 @@ export default function Contact({ contactInfo = {} }) {
     setSubmitted(true);
   };
 
-  const email = contactInfo.email || 'hello@hullapindou.com';
+  const email = contactInfo.email || 'hullaaaa167@gmail.com';
   const whatsappUrl = contactInfo.whatsapp_url || 'https://wa.me/60123456789';
   const instagramUrl = contactInfo.instagram_url || 'https://instagram.com/cozyhulla';
   const address = contactInfo.store_address || 'Unit 12-08, Creative Craft Hub, Jalan Bukit Bintang, 55100 Kuala Lumpur, Malaysia';
 
   return (
     <div className="min-h-screen bg-brand-cream flex flex-col font-sans">
-      <Head title="Contact Us - Hulla Pindou" />
+      <Head title="Contact Us - 呼啦の小铺" />
 
       <AnnouncementBar />
       <Header />
@@ -107,7 +107,7 @@ export default function Contact({ contactInfo = {} }) {
               <div className="bg-emerald-50 border border-emerald-200 rounded-2xl p-6 text-center space-y-2">
                 <CheckCircle2 className="w-10 h-10 text-emerald-600 mx-auto" />
                 <h4 className="text-base font-bold text-emerald-900">Message Sent Successfully!</h4>
-                <p className="text-xs text-emerald-700">Thank you for reaching out to Hulla Pindou. We will reply soon.</p>
+                <p className="text-xs text-emerald-700">Thank you for reaching out to 呼啦の小铺. We will reply soon.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4 text-xs">
@@ -199,7 +199,7 @@ export default function Contact({ contactInfo = {} }) {
             {/* Online Store Info Card */}
             <div className="aspect-video rounded-2xl bg-brand-oilGreen-50 border-2 border-brand-pinkSalt-300 flex flex-col items-center justify-center p-6 text-center space-y-2">
               <Instagram className="w-8 h-8 text-brand-oilGreen" />
-              <h4 className="text-xs font-bold text-brand-oilGreen-900">Hulla Pindou Online Store (拼豆小铺)</h4>
+              <h4 className="text-xs font-bold text-brand-oilGreen-900">呼啦の小铺 Online Store</h4>
               <p className="text-[11px] text-gray-500">Fast Nationwide Shipping • Kuala Lumpur, Malaysia</p>
             </div>
           </div>

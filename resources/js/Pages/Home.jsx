@@ -9,7 +9,7 @@ import { Sparkles, Heart, Package, ShieldCheck, ArrowRight, Instagram } from 'lu
 export default function Home({ heroBanners = [], categories = [], newProducts = [], recommendedProducts = [], clearanceProducts = [] }) {
   return (
     <div className="min-h-screen bg-brand-cream flex flex-col font-sans">
-      <Head title="Hulla Pindou (拼豆小铺) - Premium Perler Beads & Craft Supplies" />
+      <Head title="呼啦の小铺 - Premium Perler Beads & Craft Supplies" />
 
       <AnnouncementBar />
       <Header categories={categories} />
@@ -218,13 +218,13 @@ export default function Home({ heroBanners = [], categories = [], newProducts = 
           <div className="bg-white rounded-3xl border border-brand-pinkSalt-200 p-8 sm:p-12 shadow-kawaii grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div className="space-y-4">
               <span className="text-xs font-extrabold text-brand-oilGreen uppercase tracking-wider bg-brand-pinkSalt-100 px-3 py-1 rounded-full">
-                About Hulla Pindou 拼豆小铺
+                About 呼啦の小铺
               </span>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-brand-charcoal">
                 Crafting Small Happiness, One Pixel Bead at a Time.
               </h2>
               <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                Founded in Kuala Lumpur, Hulla Pindou was born out of a passion for vibrant pixel art and therapeutic DIY crafting. We source top-tier non-toxic EVA fuse beads to ensure bright color consistency, smooth melting, and sturdy finished keychains.
+                Founded in Kuala Lumpur, 呼啦の小铺 was born out of a passion for vibrant pixel art and therapeutic DIY crafting. We source top-tier non-toxic EVA fuse beads to ensure bright color consistency, smooth melting, and sturdy finished keychains.
               </p>
               <div className="pt-2">
                 <Link

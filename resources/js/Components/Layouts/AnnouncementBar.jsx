@@ -7,7 +7,7 @@ export default function AnnouncementBar() {
       <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-1.5 text-center sm:text-left">
         <div className="flex items-center gap-2">
           <Sparkles className="w-3.5 h-3.5 text-brand-pinkSalt animate-pulse" />
-          <span>Welcome to Hulla Pindou (拼豆小铺) – 满RM30半包邮！满RM50全马包邮！🎁</span>
+          <span>Welcome to 呼啦の小铺 – 满RM30半包邮！满RM50全马包邮！🎁</span>
         </div>
         <div className="hidden md:flex items-center gap-4 text-brand-pinkSalt-100">
           <span className="flex items-center gap-1"><Truck className="w-3.5 h-3.5" /> Fast Dispatch in 24h</span>

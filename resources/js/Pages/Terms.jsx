@@ -8,7 +8,7 @@ import { ShieldCheck, Truck, RefreshCw, AlertCircle, HelpCircle, Tag, Scissors, 
 export default function Terms({ lastUpdated }) {
   return (
     <div className="min-h-screen bg-brand-cream flex flex-col font-sans">
-      <Head title="Custom Order Terms & After-Sales Policy (拼豆接单定制须知与售后) - Hulla Pindou" />
+      <Head title="Custom Order Terms & After-Sales Policy (接单须知与售后) - 呼啦の小铺" />
 
       <AnnouncementBar />
       <Header />
@@ -24,7 +24,7 @@ export default function Terms({ lastUpdated }) {
             拼豆接单须知 & 售后规则 <span className="text-lg font-medium text-gray-500 block sm:inline">(Custom Commission & After-Sales T&C)</span>
           </h1>
           <p className="text-xs text-gray-500 pt-1">
-            Hulla Pindou (拼豆小铺) • Last Updated: {lastUpdated || 'July 2026'}
+            呼啦の小铺 • Last Updated: {lastUpdated || 'July 2026'}
           </p>
         </div>
 

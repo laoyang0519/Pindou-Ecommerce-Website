@@ -29,7 +29,7 @@ export default function ProductDetail({ product, relatedProducts = [] }) {
 
   return (
     <div className="min-h-screen bg-brand-cream flex flex-col font-sans">
-      <Head title={`${product.title} - Hulla Pindou`} />
+      <Head title={`${product.title} - 呼啦の小铺`} />
 
       <AnnouncementBar />
       <Header />

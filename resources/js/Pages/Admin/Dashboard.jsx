@@ -5,15 +5,18 @@ import { Users, Package, Layers, AlertTriangle, ArrowRight, ShieldCheck, Home } 
 export default function AdminDashboard({ stats = {} }) {
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col font-sans">
-      <Head title="Admin Dashboard - Hulla Pindou" />
+      <Head title="Admin Dashboard - 呼啦の小铺" />
 
       {/* Admin Top Navbar */}
       <header className="bg-brand-charcoal text-white px-6 py-4 flex items-center justify-between shadow-md">
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-full bg-brand-pinkSalt-200 border border-brand-oilGreen flex items-center justify-center font-bold text-brand-oilGreen-800 text-base">
-            豆
-          </div>
-          <span className="font-extrabold text-lg tracking-tight">Hulla Pindou Back-Office</span>
+          <img
+            src="/images/logo.png"
+            alt="Logo"
+            className="w-8 h-8 object-contain rounded-full bg-white p-0.5"
+            onError={(e) => { e.target.style.display = 'none'; }}
+          />
+          <span className="font-extrabold text-lg tracking-tight">呼啦の小铺 Back-Office</span>
           <span className="bg-brand-oilGreen text-[10px] font-extrabold px-2 py-0.5 rounded-full uppercase">Admin Portal</span>
         </div>
 

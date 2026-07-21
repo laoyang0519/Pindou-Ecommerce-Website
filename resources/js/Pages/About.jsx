@@ -8,7 +8,7 @@ import { Heart, Sparkles, ShieldCheck, Smile, Award } from 'lucide-react';
 export default function About({ brandInfo }) {
   return (
     <div className="min-h-screen bg-brand-cream flex flex-col font-sans">
-      <Head title="About Us - Hulla Pindou (拼豆小铺)" />
+      <Head title="About Us - 呼啦の小铺" />
 
       <AnnouncementBar />
       <Header />
@@ -20,25 +20,25 @@ export default function About({ brandInfo }) {
           <div className="flex justify-center mb-2">
             <img
               src="/images/logo.png"
-              alt="Hulla Perler Beads Logo"
+              alt="呼啦の小铺 Logo"
               className="h-24 w-auto bg-white p-2 rounded-full border-2 border-brand-pinkSalt shadow-sm"
             />
           </div>
           <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-brand-pinkSalt-100 text-brand-oilGreen text-xs font-bold uppercase tracking-wider">
-            <Sparkles className="w-3.5 h-3.5" /> About Hulla Pindou (拼豆小铺)
+            <Sparkles className="w-3.5 h-3.5" /> About 呼啦の小铺
           </span>
           <h1 className="text-3xl sm:text-4xl font-extrabold text-brand-charcoal leading-tight">
             Bringing Pixel Art Dreams to Life, Bead by Bead. ✨
           </h1>
           <p className="text-sm text-gray-600 leading-relaxed max-w-2xl mx-auto font-medium">
-            Hulla Pindou is a Malaysian craft brand dedicated to perler bead lovers, DIY creators, and pixel art enthusiasts. We curate premium 2.6mm & 5mm food-grade EVA fuse beads in over 72 vibrant pastel colors.
+            呼啦の小铺 is a Malaysian craft brand dedicated to perler bead lovers, DIY creators, and pixel art enthusiasts. We curate premium 2.6mm & 5mm food-grade EVA fuse beads in over 72 vibrant pastel colors.
           </p>
         </div>
 
         {/* Our Story Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <div className="space-y-4 bg-white rounded-3xl p-8 border border-brand-pinkSalt-200 shadow-sm">
-            <h2 className="text-2xl font-extrabold text-brand-oilGreen-900">Why Crafters Choose Hulla Pindou?</h2>
+            <h2 className="text-2xl font-extrabold text-brand-oilGreen-900">Why Crafters Choose 呼啦の小铺?</h2>
             <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
               Crafting should be therapeutic and joyful. Unlike generic beads that warp easily or produce uneven melts under heat, our perler beads are strictly selected for uniform height, consistent inner diameter, and non-toxic EVA composition.
             </p>

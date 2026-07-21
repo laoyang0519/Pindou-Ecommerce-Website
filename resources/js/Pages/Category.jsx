@@ -24,7 +24,7 @@ export default function Category({ categories = [], currentCategory = null, prod
 
   return (
     <div className="min-h-screen bg-brand-cream flex flex-col font-sans">
-      <Head title={currentCategory ? `${currentCategory.name} - Hulla Pindou` : "All Craft Products - Hulla Pindou"} />
+      <Head title={currentCategory ? `${currentCategory.name} - 呼啦の小铺` : "All Craft Products - 呼啦の小铺"} />
 
       <AnnouncementBar />
       <Header categories={categories} />

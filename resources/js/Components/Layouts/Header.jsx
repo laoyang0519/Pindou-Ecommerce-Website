@@ -49,15 +49,12 @@ export default function Header({ categories = [] }) {
                   }}
                 />
                 <div className="hidden items-center gap-2">
-                  <div className="w-10 h-10 rounded-full bg-brand-pinkSalt-200 border-2 border-brand-oilGreen flex items-center justify-center font-bold text-brand-oilGreen-800 text-xl shadow-sm">
-                    豆
-                  </div>
                   <div className="flex flex-col">
                     <span className="font-extrabold text-2xl tracking-tight text-brand-oilGreen font-sans">
-                      Hulla Pindou
+                      呼啦の小铺
                     </span>
                     <span className="text-[10px] tracking-widest uppercase font-semibold text-brand-oilGreen-600 -mt-1">
-                      Perler Beads & More
+                      Perler Beads & Craft Store
                     </span>
                   </div>
                 </div>
