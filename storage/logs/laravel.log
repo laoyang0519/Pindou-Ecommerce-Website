@@ -501,3 +501,22 @@
 #49 C:/Users/chanj/OneDrive/Documents/GitHub/Pindou-Ecommerce-Website/artisan(13): Illuminate/Foundation/Application->handleCommand(Object(Symfony/Component/Console/Input/ArgvInput))
 #50 {main}
 "} 
+[2026-07-22 15:40:52] local.ERROR: Command "route:call" is not defined.
+
+Did you mean one of these?
+    route:cache
+    route:clear
+    route:list {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"route:call\" is not defined.
+
+Did you mean one of these?
+    route:cache
+    route:clear
+    route:list at C:/Users/chanj/OneDrive/Documents/GitHub/Pindou-Ecommerce-Website/vendor/symfony/console/Application.php:759)
+[stacktrace]
+#0 C:/Users/chanj/OneDrive/Documents/GitHub/Pindou-Ecommerce-Website/vendor/symfony/console/Application.php(298): Symfony/Component/Console/Application->find('route:call')
+#1 C:/Users/chanj/OneDrive/Documents/GitHub/Pindou-Ecommerce-Website/vendor/symfony/console/Application.php(195): Symfony/Component/Console/Application->doRun(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#2 C:/Users/chanj/OneDrive/Documents/GitHub/Pindou-Ecommerce-Website/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony/Component/Console/Application->run(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#3 C:/Users/chanj/OneDrive/Documents/GitHub/Pindou-Ecommerce-Website/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1235): Illuminate/Foundation/Console/Kernel->handle(Object(Symfony/Component/Console/Input/ArgvInput), Object(Symfony/Component/Console/Output/ConsoleOutput))
+#4 C:/Users/chanj/OneDrive/Documents/GitHub/Pindou-Ecommerce-Website/artisan(13): Illuminate/Foundation/Application->handleCommand(Object(Symfony/Component/Console/Input/ArgvInput))
+#5 {main}
+"} 
